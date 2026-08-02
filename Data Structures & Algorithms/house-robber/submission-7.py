@@ -1,0 +1,13 @@
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        maxs=0
+        prevmaxs= 0
+        prev=-1 #index of the last element in maxs 
+        for i in range(len(nums)): 
+            res=max(prevmaxs+nums[i],maxs)
+            temp=i 
+            prevmaxs=maxs 
+            maxs=res 
+            prev=i 
+
+        return maxs
